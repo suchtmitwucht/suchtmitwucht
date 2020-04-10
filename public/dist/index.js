@@ -50445,7 +50445,7 @@ const run = () => {
     renderer.render(scene, camera)
 }
 var mesh = undefined;
-loader.load( '/public/res/pan.jpg', function ( texture ) {
+loader.load( 'https://comcloudway.github.io/suchtmitwucht/public/res/pan.jpg', function ( texture ) {
 
     var geometry = new THREE.SphereGeometry( vars.width, 20, 20 );
 

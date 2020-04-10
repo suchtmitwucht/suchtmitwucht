@@ -124,7 +124,7 @@ body {
     margin: 0.4rem;
 }
 .slide2 .item:hover {
-    filter: contrast(80%);
+    filter: contrast(97%);
 }
 .slide2 .item .icon {
     grid-area: i;
