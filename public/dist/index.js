@@ -50454,7 +50454,6 @@ loader.load( 'https://comcloudway.github.io/suchtmitwucht/public/res/pan.jpg', f
      mesh.rotation.y=2+window.scrollY/400-2
 
     scene.add(mesh)
-console.log("hi")
     run()
 } );
 
@@ -50505,4 +50504,16 @@ const loadNews = () => {
 
 }
 loadNews()
+
+/*
+Useless insider
+*/
+console.log(`%c ________________________________________
+< mooooooooooooooooooooooooooooooooooooo >
+ ----------------------------------------
+        \\   ^__^
+         \\  (oo)\\_______
+            (__)\\       )\\/\\
+                ||----w |
+                ||     ||`, "font-family:monospace")
 },{"three":1}]},{},[2]);
