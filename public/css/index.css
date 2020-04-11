@@ -159,8 +159,103 @@ body {
     text-align: center;
     min-height: 100vh;
     min-width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 3rem;
 }
 .slide3 .title {
     font-size: 3rem;
     padding-top: 2rem;
 } 
+.slide3 .episode {
+    display: grid;
+    grid-template-areas: "icon title" "icon input" "icon release" "icon expire";
+    grid-template-columns: 11rem minmax(auto,calc(100% - 11rem - 10%));
+    width: 80%;
+    background-color: #F5F5F5;
+    filter: contrast(100%);
+    transition: filter .2s;
+    margin: 0.4rem 0;
+    padding: 0.8rem;
+    border-radius: 0.4rem;
+    align-self: center;
+    justify-self: left;
+}
+.slide3 .episode:hover {
+    filter: contrast(90%);
+}
+.slide3 .episode .cover {
+    width: 10rem;
+    height: 10rem;
+    background-position: center center;
+    background-size: cover;
+    border-radius: 0.4rem;
+    grid-area: icon;
+    align-self: center;
+    justify-self: center;
+}
+.slide3 .episode .name {
+    grid-area: title;
+    align-self: center;
+    justify-self: left;
+}
+.slide3 .episode .url {
+grid-area: input;
+color: #212121;
+background-color: transparent;
+border: none;
+outline: none;
+width: auto;
+align-self: center;
+justify-self: left;
+}
+.slide3 .episode .release-date {
+grid-area: release;
+align-self: center;
+justify-self: left;
+display: flex;
+flex-direction: row;
+justify-content: center;
+}
+.slide3 .episode .release-date i {
+    width: 2rem;
+    height: 2rem;
+    line-height: 2rem;
+    text-align: center;
+}
+.slide3 .episode .release-date p {
+    padding: 0;
+    margin: 0;
+    line-height: 2rem;
+}
+.slide3 .episode .expire-date {
+grid-area: expire;
+align-self: center;
+justify-self: left;
+display: flex;
+flex-direction: row;
+justify-content: center;
+}
+.slide3 .episode .expire-date i {
+    width: 2rem;
+    height: 2rem;
+    line-height: 2rem;
+    text-align: center;
+}
+.slide3 .episode .expire-date p {
+    padding: 0;
+    margin: 0;
+    line-height: 2rem;
+}
+.slide3 .unreleased {
+    opacity: 0.4;
+    
+}
+.slide3 .unreleased:hover {
+    filter: contrast(95%) !important;
+    cursor: not-allowed;
+}
+.slide3 .unreleased:hover * {
+    cursor: not-allowed;
+}
