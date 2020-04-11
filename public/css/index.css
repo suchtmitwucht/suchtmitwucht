@@ -112,10 +112,10 @@ body {
     padding: 0.4rem;
     display: grid;
     grid-template-areas: "i  t" "i  d";
-    grid-template-rows: 5rem 5rem;
+    grid-template-rows: minmax(5rem,auto) minmax(5rem, auto);
     grid-template-columns: 10rem auto ;
     min-height: 10rem;
-    max-height: 30%;
+    height: auto;
     position: relative;
     transform: translate(-50%, 0%);
     left: 50%;
@@ -123,6 +123,7 @@ body {
     filter: contrast(100%);
     transition: filter .2s;
     margin: 0.4rem;
+    word-wrap: break-word;
 }
 .slide2 .item:hover {
     filter: contrast(97%);
@@ -143,7 +144,9 @@ body {
     align-self: center;
     justify-self: left;
     text-align: left;
-    text-indent: 1rem;
+    margin-left: 1rem;
+    word-wrap: break-word;
+    word-break: break-all;
 }
 .slide2 .item .cont {
     grid-area: d;
@@ -154,6 +157,8 @@ body {
     margin-left: 1rem;
     align-self: flex-start;
     justify-self: left;
+    word-wrap: break-word;
+    word-break: break-all;
 }
 
 .slide3 {

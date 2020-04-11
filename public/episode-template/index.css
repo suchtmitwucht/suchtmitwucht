@@ -362,3 +362,13 @@ Standart Layout
 .green-audio-player .controls {
     color: #fafafa !important;
 }
+.green-audio-player .slider .gap-progress .pin {
+    background-color: #FFAB40 !important;
+    
+}
+.green-audio-player .slider .gap-progress {
+    background-color: #FFD180 !important;
+}
+.green-audio-player .volume .volume__button svg path {
+    fill: #Fafafa !important;
+}
