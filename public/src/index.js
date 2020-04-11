@@ -60,7 +60,7 @@ News system
 */
 const loadNews = () => {
 
-    fetch("public/database/news.json")
+    fetch("https://comcloudway.github.io/suchtmitwucht-database/news.json")
         .then(res => res.json())
         .then(json => {
 
@@ -95,7 +95,7 @@ loadNews()
 
 /*Episode List */
 const loadEP = () => {
-    fetch("public/database/episodes.json")
+    fetch("https://comcloudway.github.io/suchtmitwucht-database/episodes.json")
         .then(res => res.json())
         .then(json => {
 
