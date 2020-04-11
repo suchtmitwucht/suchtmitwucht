@@ -21,53 +21,53 @@ app.get(["/:id", "*"], (req, res) => {
     let text = buff.toString('ascii')
     var c = 0;
     fetch("https://comcloudway.github.io/suchtmitwucht-database/episodes.json")
-    .then(res=>res.json())
-    .then(json=> {
-        let ep = json
+        .then(res => res.json())
+        .then(json => {
+            let ep = json
 
-     
-    for (let episode of ep.episodes) {
-        if (text == episode.id) {
-            //episode found
-            c = 1;
 
-            //Do sth.
+            for (let episode of ep.episodes) {
+                if (text == episode.id) {
+                    //episode found
+                    c = 1;
 
-            fs.readFile(path.join(__dirname, "public/episode-template", "index.html"), "utf-8", (err, cont) => {
-                if (err != undefined) {
-                    res.send("Error")
-                } else {
-                    let parts = cont.split("!split!");
+                    //Do sth.
 
-                    //Create html presets
-                    let audio = ""
-                    let main = "";
-                    for (let file of episode.files) {
-                        if (file.main) main = file.src
-                        audio += `
+                    fs.readFile(path.join(__dirname, "public/episode-template", "index.html"), "utf-8", (err, cont) => {
+                        if (err != undefined) {
+                            res.send("Error")
+                        } else {
+                            let parts = cont.split("!split!");
+
+                            //Create html presets
+                            let audio = ""
+                            let main = "";
+                            for (let file of episode.files) {
+                                if (file.main) main = file.src
+                                audio += `
     <div class="item" onclick="document.getElementById('player-src').src='${file.src}'">
     <p class="name">${file.name} </p><p class="play">ᐅ</p>
     </div>
     `
-                    }
+                            }
 
-                    let team = ""
-                    for (let memb of episode.team) {
-                        let main = `
+                            let team = ""
+                            for (let memb of episode.team) {
+                                let main = `
     <div class="item">
     <p class="name">${memb.name}</p>
     `
-                        for (let task of memb.work) {
-                            main += `
+                                for (let task of memb.work) {
+                                    main += `
         <p class="task">${task}</p>
         `
-                        }
-                        team += main + "</div>"
-                    }
+                                }
+                                team += main + "</div>"
+                            }
 
-                    let src = ""
-                    for (let q of episode.src) {
-                        src += `
+                            let src = ""
+                            for (let q of episode.src) {
+                                src += `
     <div class="item">
     <p class="left">Name:</p>
     <p class="right">${q.name}</p>
@@ -83,38 +83,38 @@ app.get(["/:id", "*"], (req, res) => {
         <p class="right">${q.use}</p>
     </div>
     `
-                    }
+                            }
 
-                    //inject html
-                    let resp = ""
-                    let data = [
-                        episode.title,
-                        episode.title,
-                        episode.desc,
-                        audio,
-                        team,
-                        src,
-                        main,
-                        episode.icon,
-                        ""
-                    ]
-                    for (let p in parts) {
-                        resp += parts[p] + data[p]
+                            //inject html
+                            let resp = ""
+                            let data = [
+                                episode.title,
+                                episode.title,
+                                episode.desc,
+                                audio,
+                                team,
+                                src,
+                                main,
+                                episode.icon,
+                                ""
+                            ]
+                            for (let p in parts) {
+                                resp += parts[p] + data[p]
 
 
-                    }
-                    res.send(resp)
+                            }
+                            res.send(resp)
+                        }
+                    })
+
+                    break;
                 }
-            })
-
-            break;
-        }
-    }
-    if (c == 0) {
-        //no episode found
-        res.sendFile(path.join(__dirname, "public", "index.html"))
-    }
-});
+            }
+            if (c == 0) {
+                //no episode found
+                res.sendFile(path.join(__dirname, "public", "index.html"))
+            }
+        });
 })
 
 app.listen(port, () => {

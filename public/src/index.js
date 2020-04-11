@@ -103,12 +103,12 @@ const loadEP = () => {
 
                 let ep = document.createElement("div")
                 ep.className = "episode"
-                ep.addEventListener("click",(e)=>{
-                    if(e.toElement!=document.getElementById(`id-id-id:${episode.id}`)) {
-                        window.location=document.getElementById(`id-id-id:${episode.id}`).value
+                ep.addEventListener("click", (e) => {
+                    if (e.toElement != document.getElementById(`id-id-id:${episode.id}`)) {
+                        window.location = document.getElementById(`id-id-id:${episode.id}`).value
                     }
-                    
-                },false)
+
+                }, false)
 
                 let cover = document.createElement("div")
                 cover.style.backgroundImage = `url(${episode.icon})`
@@ -135,16 +135,16 @@ const loadEP = () => {
                         }
                     }
                 }
-                if(code!=3) {
-                //expired or not released
-                ep.className="episode unreleased"
-                } 
+                if (code != 3) {
+                    //expired or not released
+                    ep.className = "episode unreleased"
+                }
 
                 let inp = document.createElement("input")
                 inp.value = v
-                inp.placeholder="Zugangscode"
+                inp.placeholder = "Zugangscode"
                 inp.className = "url"
-                inp.id=`id-id-id:${episode.id}`
+                inp.id = `id-id-id:${episode.id}`
 
                 let re = document.createElement("div")
                 re.className = "release-date"
