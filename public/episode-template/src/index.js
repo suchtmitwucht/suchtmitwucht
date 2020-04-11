@@ -26,7 +26,7 @@ var loader = new THREE.TextureLoader();
 
 var scene = new THREE.Scene();
 
-var camera = new THREE.PerspectiveCamera(vars.fov, window.innerWidth / window.innerHeight, 0.1, 1000);
+var camera = new THREE.PerspectiveCamera(vars.fov, (window.innerWidth + 20) / (window.innerHeight+20), 0.1, 1000);
 
 camera.position.z = vars.cameraZ
 
@@ -34,7 +34,7 @@ var light = new THREE.AmbientLight(0x000000)
 scene.add(light)
 
 var renderer = new THREE.WebGLRenderer();
-renderer.setSize(window.innerWidth, window.innerHeight)
+renderer.setSize(window.innerWidth+20, window.innerHeight+20)
 
 document.body.appendChild(renderer.domElement)
 renderer.domElement.className = "viewport"

@@ -2,13 +2,363 @@
 :root {
     font-size: 16px;
     font-family: 'Nunito', sans-serif;
-    
+    color: #fafafa;
+    cursor: default;
+}
+body {
+    background-color: black;
 }
 .viewport {
     position: fixed;
-    top: 0;
-    left: 0;
+    top: -10px;
+    left: -20px;
     margin: 0;
     padding: 0;
     z-index: -1;
+    filter: blur(20px);
+    opacity: 0.8;
+}
+.main .desc, .main .title {
+    word-wrap: break-word;
+}
+.main .desc {
+    text-align: center;
+    width: 90%;
+}
+/*Landscape*/
+@media (orientation: landscape) {
+
+.main {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: calc(25vw - 10px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.main::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: -10px;
+    width: calc(100% + 10px);
+    height: 100%;
+    background-color: #212121;
+    opacity: 0.5;
+    filter: blur(10px);
+    z-index: -1;
+}
+.main .cover {
+    width: calc((25vw - 10px) / 1.5);
+    height: calc((25vw - 10px) / 1.5);
+    background-position: center center;
+    background-size: cover;
+    margin-top: calc(((25vw - 10px) - (25vw - 10px) / 1.5) / 2);
+    border-radius: 0.4rem;
+}
+.main .title {
+    width: calc((25vw - 10px) / 1.25);
+    text-align: center;
+    font-size: 1.1rem;
+}
+.main .desc {
+opacity: 0.8;
+overflow-y: auto;
+padding-bottom: 3.4rem;
+}
+
+.additional {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: calc(100% - 25vw);
+    padding-bottom: 4rem;
+}
+
+.additional .header {
+    padding: 0;
+    margin: 0.8rem;
+    font-size: 1.2rem;
+}
+.additional .header ~ div {
+    margin-left: 1.2rem;
+}
+.additional .audio {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(30%,auto));
+    grid-gap: 0.4rem;
+}
+.additional .audio .item {
+    background-color: rgba(42,42,42,0.4);
+    display: flex;
+    flex-direction: row;
+    padding: 0 0.4rem;
+    cursor: pointer;
+    border-radius: 0.4rem;
+    transition: background-color .2s;
+}
+.additional .audio .item:hover {
+    background-color: rgba(42,42,42,0.6);
+}
+.additional .audio .item .play {
+    margin-left: auto;
+    color: #fafafa;
+    transition: color .2s;
+}
+.additional .audio .item:hover .play {
+    color: #FFAB40;
+}
+
+.additional .team {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(30%,auto));
+    grid-gap: 0.4rem;
+}
+.additional .team .item {
+    background-color: rgba(42,42,42,0.4);
+    padding: 0.4rem;
+    border-radius: 0.4rem;
+    transition: background-color .2s;
+}
+.additional .team .item:hover {
+    background-color: rgba(42,42,42,0.6);
+}
+.additional .team .name {
+    font-size: 1.1rem;
+    padding: 0;
+    margin: 0.4rem;
+    margin-top: 0.8rem;
+    color: #fafafa;
+    transition: color .2s;
+}
+.additional .team .item:hover .name {
+    color: #FFAB40;
+}
+.additional .team .item .task {
+    margin-left: 0.8rem;
+}
+
+.additional .src {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,45%);
+    grid-gap: 0.4rem;
+}
+.additional .src .item {
+    background-color: rgba(42,42,42,0.4);
+    padding: 0.4rem;
+    border-radius: 0.4rem;
+    transition: background-color .2s;
+    display: grid;
+    grid-template-columns: 30% 70%;
+}
+.additional .src .item:hover {
+    background-color: rgba(42,42,42,0.6);
+}
+.additional .src .left {
+    color: #fafafa;
+    grid-column: 0/0;
+    width: 100%;
+    word-wrap: break-word;
+}
+.additional .src .item .right {
+    margin-left: 0.8rem;
+    grid-template-columns: 1/1;
+    width: 95%;
+    word-wrap: break-word;
+}
+.additional .src .item a {
+    text-decoration: none;
+    color: #F5F5F5;
+    transition: color .2s;
+}
+.additional .src .item .link:hover ~ a, .additional .src .item a:hover {
+     color: #FFAB40;
+}
+}
+/*Portrait*/
+@media (orientation: portrait) {
+body {
+    padding: 0;
+    margin: 0;
+    width: calc(100% - 40px);
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    display: grid;
+    grid-template-columns: calc(100% + 40px);
+}
+    .main {
+        justify-self: center;
+        align-self: center;
+        position: relative;
+        height: auto;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(auto-fill,minmax(5rem, auto));
+        align-items: center;
+    } 
+    .main::after {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: -10px;
+        width: calc(100% + 10px);
+        height: 100%;
+        background-color: #212121;
+        opacity: 0.5;
+        filter: blur(10px);
+        z-index: -1;
+    }
+    .main .cover {
+        width: 50vw;
+        height: 50vw;
+        background-position: center center;
+        background-size: cover;
+        border-radius: 0.4rem;
+        justify-self: center;
+        margin-top: 10vw;
+    }
+    .main .title {
+        justify-self: center;
+        width: 90%;
+        text-align: center;
+        font-size: 1.5rem;
+    }
+    .main .desc {
+    opacity: 0.8;
+    justify-self: center;
+    font-size: 1.1rem;
+    }
+    
+    .additional {
+        position: relative;
+        width: 100%;
+        padding-bottom: 4rem;
+    }
+    
+    .additional .header {
+        padding: 0;
+        margin: 0.8rem;
+        font-size: 1.2rem;
+    }
+    .additional .header ~ div {
+        margin-left: 1.2rem;
+    }
+    .additional .audio {
+        display: grid;
+        grid-template-columns: 95%;
+        grid-gap: 0.4rem;
+        font-size: 1.1rem;
+    }
+    .additional .audio .item {
+        background-color: rgba(42,42,42,0.4);
+        display: flex;
+        flex-direction: row;
+        padding: 0 0.4rem;
+        cursor: pointer;
+        justify-self: center;
+        width: 90%;
+        border-radius: 0.4rem;
+        transition: background-color .2s;
+    }
+    .additional .audio .item:hover {
+        background-color: rgba(42,42,42,0.6);
+    }
+    .additional .audio .item .play {
+        margin-left: auto;
+        color: #fafafa;
+        transition: color .2s;
+    }
+    .additional .audio .item:hover .play {
+        color: #FFAB40;
+    }
+    
+    .additional .team {
+        display: grid;
+        grid-template-columns: 95%;
+        grid-gap: 0.4rem;
+        font-size: 1.1rem;
+    }
+    .additional .team .item {
+        background-color: rgba(42,42,42,0.4);
+        padding: 0.4rem;
+        border-radius: 0.4rem;
+        transition: background-color .2s;
+    }
+    .additional .team .item:hover {
+        background-color: rgba(42,42,42,0.6);
+    }
+    .additional .team .name {
+        font-size: 1.1rem;
+        padding: 0;
+        margin: 0.4rem;
+        margin-top: 0.8rem;
+        color: #fafafa;
+        transition: color .2s;
+    }
+    .additional .team .item:hover .name {
+        color: #FFAB40;
+    }
+    .additional .team .item .task {
+        margin-left: 0.8rem;
+    }
+    
+    .additional .src {
+        display: grid;
+        grid-template-columns: 95%;
+        grid-gap: 0.4rem;
+        font-size: 1.1rem;
+    }
+    .additional .src .item {
+        background-color: rgba(42,42,42,0.4);
+        padding: 0.4rem;
+        border-radius: 0.4rem;
+        transition: background-color .2s;
+        display: grid;
+        grid-template-columns: 30% 70%;
+    }
+    .additional .src .item:hover {
+        background-color: rgba(42,42,42,0.6);
+    }
+    .additional .src .left {
+        color: #fafafa;
+        grid-column: 0/0;
+        width: 100%;
+        word-wrap: break-word;
+    }
+    .additional .src .item .right {
+        margin-left: 0.8rem;
+        grid-template-columns: 1/1;
+        width: 95%;
+        word-wrap: break-word;
+    }
+    .additional .src .item a {
+        text-decoration: none;
+        color: #F5F5F5;
+        transition: color .2s;
+    }
+    .additional .src .item .link:hover ~ a, .additional .src .item a:hover {
+         color: #FFAB40;
+    }
+    }
+
+/*
+Standart Layout
+*/
+
+.green-audio-player {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100% !important;
+    border-radius: 0 !important;
+    background-color: #212121 !important;
+    height: 3rem !important;
+}
+.green-audio-player .controls {
+    color: #fafafa !important;
 }

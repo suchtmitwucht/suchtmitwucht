@@ -40,7 +40,7 @@ for (let file of episode.files) {
     if(file.main) main=file.src
     audio += `
     <div class="item" onclick="document.getElementById('player-src').src='${file.src}'">
-    <p class="name">${file.name} ᐅ</p>
+    <p class="name">${file.name} </p><p class="play">ᐅ</p>
     </div>
     `
 }
@@ -69,10 +69,10 @@ for (let q of episode.src) {
         <p class="right">${q.category}</p>
     <p class="left">Künstler:</p>
         <p class="right">${q.artist}</p>
-    <p class="left">Quelle:</p>
+    <p class="left link">Quelle:</p>
         <a class="right" href="${q.src}">${q.src}</a>
-    <p class="left">Lizenz:</p>
-        <a class="right">${q.license}</a>
+    <p class="left link">Lizenz:</p>
+        <a href="${q.license}" class="right">${q.license}</a>
     <p class="left">Unser Nutzen:</p>
         <p class="right">${q.use}</p>
     </div>
