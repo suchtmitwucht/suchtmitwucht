@@ -50514,11 +50514,14 @@ const loadEP = () => {
             for (let episode of json.episodes) {
 
                 let ep = document.createElement("div")
-                
                 ep.className = "episode"
-                ep.onclick=()=>{
-                    window.location=document.getElementById(`id-id-id:${episode.id}`).value
-                }
+                ep.addEventListener("click",(e)=>{
+                    console.log(e)
+                    if(e.toElement!=document.getElementById(`id-id-id:${episode.id}`)) {
+                        window.location=document.getElementById(`id-id-id:${episode.id}`).value
+                    }
+                    
+                },false)
 
                 let cover = document.createElement("div")
                 cover.style.backgroundImage = `url(${episode.icon})`
