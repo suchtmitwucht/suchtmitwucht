@@ -150,7 +150,7 @@ body {
     opacity: 0.8;
     padding: 0;
     text-align: left;
-    text-indent: 1rem;
+    margin-left: 1rem;
     align-self: flex-start;
     justify-self: left;
 }

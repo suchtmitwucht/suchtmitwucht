@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>!split!</title>
+    <link rel="stylesheet" href="public/episode-template/index.css">
+    <link rel="stylesheet" href="/public/episode-template/green-audio-player/dist/css/green-audio-player.min.css">
+    <script src="/public/episode-template/green-audio-player/dist/js/green-audio-player.min.js"></script>
+</head>
+<body>
+    <div class="main">
+        <div class="cover"></div>
+        <p class="title">!split!</p>
+        <p class="desc">!split!</p>
+    </div>
+    <div class="additional">
+<!--<div class="audio">
+        <div class="name"></div>
+        <audio src=""></audio>
+    </div> Audio tags go here-->
+    <p class="header">Anhören</p>
+    <div class="audio">
+        
+        !split!
+    </div>
+    <p class="header">Produzenten</p>
+    <div class="team">
+        
+        <!--Teams appended here as html elements-->
+        !split!
+    </div>
+    <p class="header">Quellen / Benutze Ressourcen</p>
+    <div class="src">
+        
+    <!--Sources appended here-->
+    !split!
+    </div>
+    </div>
+    <div class="player">
+        <audio crossorigin>
+        <source id="player-src" src="!split!" type="audio/mpeg">
+      </audio>
+    </div>
+    <style>
+        .cover {
+            background-image: url(!split!);
+        }
+    </style>
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+  new GreenAudioPlayer('.player');
+});
+    </script>
+    <script src="/public/episode-template/dist/index.js"></script>
+</body>
+</html>
