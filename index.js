@@ -20,7 +20,7 @@ app.get(["/:id", "*"], (req, res) => {
     let buff = new Buffer(req.params.id, "base64");
     let text = buff.toString('ascii')
     var c = 0;
-    fetch("https://comcloudway.github.io/suchtmitwucht-database/episodes.json")
+    fetch("https://suchtmitwucht.github.io/suchtmitwucht-database/episodes.json")
         .then(res => res.json())
         .then(json => {
             let ep = json

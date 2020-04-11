@@ -50472,7 +50472,7 @@ News system
 */
 const loadNews = () => {
 
-    fetch("https://comcloudway.github.io/suchtmitwucht-database/news.json")
+    fetch("https://suchtmitwucht.github.io/suchtmitwucht-database/news.json")
         .then(res => res.json())
         .then(json => {
 
@@ -50507,7 +50507,7 @@ loadNews()
 
 /*Episode List */
 const loadEP = () => {
-    fetch("https://comcloudway.github.io/suchtmitwucht-database/episodes.json")
+    fetch("https://suchtmitwucht.github.io/suchtmitwucht-database/episodes.json")
         .then(res => res.json())
         .then(json => {
 
