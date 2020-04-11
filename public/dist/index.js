@@ -50516,7 +50516,6 @@ const loadEP = () => {
                 let ep = document.createElement("div")
                 ep.className = "episode"
                 ep.addEventListener("click",(e)=>{
-                    console.log(e)
                     if(e.toElement!=document.getElementById(`id-id-id:${episode.id}`)) {
                         window.location=document.getElementById(`id-id-id:${episode.id}`).value
                     }
@@ -50538,7 +50537,6 @@ const loadEP = () => {
                 if (d.getFullYear() >= episode.release[2] && d.getFullYear() <= episode.expires[2]) {
                     //Year ok
                     code++
-                    console.log(d.getMonth() <= episode.expires[1])
                     if (d.getMonth() >= episode.release[1] && d.getMonth() <= episode.expires[1]) {
                         //Month ok
                         code++
