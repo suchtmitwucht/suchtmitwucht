@@ -109,12 +109,12 @@ app.get(["/:id", "*"], (req, res) => {
 
             break;
         }
-    }});
+    }
     if (c == 0) {
         //no episode found
         res.sendFile(path.join(__dirname, "public", "index.html"))
     }
-
+});
 })
 
 app.listen(port, () => {
