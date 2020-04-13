@@ -50476,6 +50476,8 @@ window.addEventListener("scroll", () => {
 
 })
 window.addEventListener("resize", () => {
-    location.reload()
+    camera = new THREE.PerspectiveCamera(vars.fov, window.innerWidth / window.innerHeight, 0.1, 1000);
+    camera.position.z = vars.cameraZ
+    renderer.setSize(window.innerWidth, window.innerHeight)
 })
 },{"three":1}]},{},[2]);
