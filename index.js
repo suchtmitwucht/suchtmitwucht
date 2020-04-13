@@ -45,7 +45,7 @@ app.get(["/:id", "*"], (req, res) => {
                             for (let file of episode.files) {
                                 if (file.main) main = file.src
                                 audio += `
-    <div class="item" onclick="document.getElementById('player-src').src='${file.src}'">
+    <div class="item" onclick="play('${file.src}')">
     <p class="name">${file.name} </p><p class="play">ᐅ</p>
     </div>
     `

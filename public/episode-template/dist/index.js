@@ -50480,4 +50480,5 @@ window.addEventListener("resize", () => {
     camera.position.z = vars.cameraZ
     renderer.setSize(window.innerWidth, window.innerHeight)
 })
+
 },{"three":1}]},{},[2]);

@@ -52,6 +52,10 @@
 document.addEventListener('DOMContentLoaded', function() {
   new GreenAudioPlayer('.player');
 });
+const play = (src) => {
+    document.getElementById('player-src').src=src
+document.getElementsByClassName("play-pause-btn")[0].click()
+}
     </script>
     <script src="/public/episode-template/dist/index.js"></script>
 </body>
