@@ -128,7 +128,7 @@ const loadEP = () => {
                 let checkForAv = () => {
                     if(d.getFullYear() < episode.expires[2]){
                         return true
-                    } else if (d.getMonth() < episode.expires[1]) {
+                    } else if (d.getMonth() +1 < episode.expires[1]) {
                         return true
                     } else if (d.getDate() < episode.expires[0]) {
                         return true
@@ -136,15 +136,20 @@ const loadEP = () => {
                         return false
                     }
                 }
+                console.log(checkForAv())
+                console.log(episode.release)
                 if(checkForAv()){
                 if (d.getFullYear() >= episode.release[2] ) {
                     //Year ok
                     code++
-                    if (d.getMonth() >= episode.release[1]) {
+                    console.log("y")
+                    if (d.getMonth() +1 >= episode.release[1]) {
                         //Month ok
                         code++
+                        console.log("m")
                         if (d.getDate() >= episode.release[0]) {
                             //Day ok
+                            console.log("d")
                             code++
                             v = btoa(episode.id)
                         }
