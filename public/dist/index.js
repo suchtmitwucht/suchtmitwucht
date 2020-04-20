@@ -50537,19 +50537,32 @@ const loadEP = () => {
 
                 let v = ""
                 let code = 0
-                if (d.getFullYear() >= episode.release[2] && d.getFullYear() <= episode.expires[2]) {
+                let checkForAv = () => {
+                    if(d.getFullYear() < episode.expires[2]){
+                        return true
+                    } else if (d.getMonth() < episode.expires[1]) {
+                        return true
+                    } else if (d.getDate() < episode.expires[0]) {
+                        return true
+                    } else {
+                        return false
+                    }
+                }
+                if(checkForAv()){
+                if (d.getFullYear() >= episode.release[2] ) {
                     //Year ok
                     code++
-                    if (d.getMonth() >= episode.release[1] && d.getMonth() <= episode.expires[1]) {
+                    if (d.getMonth() >= episode.release[1]) {
                         //Month ok
                         code++
-                        if (d.getDate() >= episode.release[0] && d.getDate() <= episode.expires[0]) {
+                        if (d.getDate() >= episode.release[0]) {
                             //Day ok
                             code++
                             v = btoa(episode.id)
                         }
                     }
                 }
+            }
                 if (code != 3) {
                     //expired or not released
                     ep.className = "episode unreleased"
